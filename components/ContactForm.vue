@@ -89,12 +89,12 @@
             />
             <div class="md:col-span-2 space-x-4 flex">
               <FormulateInput
-                input-class="bg-primary-50 shadow-lg rounded-full border border-primary-50 px-4 pt-2 pb-2 text-white w-40 text-center"
+                input-class="bg-primary-50 shadow-lg rounded-full border border-primary-50 px-4 pt-2 pb-2 text-white w-40 text-center focus:outline-none"
                 type="submit"
                 label="SUBMIT"
               />
               <FormulateInput
-                input-class="bg-white shadow-lg rounded-full border px-4 pt-2 pb-2 w-40 text-center"
+                input-class="bg-white shadow-lg rounded-full border px-4 pt-2 pb-2 w-40 text-center focus:outline-none"
                 type="button"
                 label="RESET"
                 @click="formData = {}"
@@ -117,19 +117,39 @@ export default {
   },
   methods: {
     submitForm() {
-      this.$refs.formWrapper.classList.toggle('rounded-full')
       this.$refs.formWrapper.classList.toggle('bg-primary-50')
       this.$refs.formWrapper.classList.toggle('bg-gray-200')
-      this.$refs.buttonLabel.classList.toggle('hidden')
+      this.$gsap.to(this.$refs.formContents, {
+        opacity: 0,
+        duration: 0.5,
+        ease: 'power3.inOut',
+        onComplete: () => {
+          this.$gsap.to(this.$refs.formContents, {
+            duration: 0.5,
+            opacity: 0,
+            width: 0,
+            height: 0,
+            ease: 'power3.inOut',
+            transformOrigin: 'right',
+            onComplete: () => {
+              this.$refs.form.classList.toggle('hidden')
+              this.$refs.buttonLabel.innerHTML = 'Thank you!'
+              this.$refs.formWrapper.classList.toggle('rounded-full')
+              this.$gsap.to(this.$refs.buttonLabel, {
+                opacity: 1,
+                duration: 0.25,
+              })
+            },
+          })
+        },
+      })
     },
     openForm() {
       switch (this.formState) {
         case 'closed':
           this.$refs.formWrapper.classList.toggle('rounded-full')
-
           this.$refs.formWrapper.classList.toggle('bg-primary-50')
           this.$refs.formWrapper.classList.toggle('bg-gray-200')
-
           this.$refs.form.classList.toggle('hidden')
 
           this.$gsap.set([this.$refs.formContents, this.$refs.buttonLabel], {

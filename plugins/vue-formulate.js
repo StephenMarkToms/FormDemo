@@ -55,7 +55,7 @@ export default function ({ $axios }) {
           case 'select':
             return 'border-2 border-success-50 shadow w-full focus:outline-none focus:ring-2 focus:ring-success-50 focus:border-success-50'
           case 'button':
-            return 'shadow-lg rounded-full border px-4 pt-2 pb-2 focus:outline-none focus:ring-2 focus:ring-success-50 '
+            return 'shadow-lg rounded-full border px-4 pt-2 pb-2 focus:outline-none outline-none border-transparent focus:outline-none'
           default:
             return ''
         }
