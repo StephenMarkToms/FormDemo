@@ -49,13 +49,13 @@ export default function ({ $axios }) {
           case 'textarea':
             return ''
           case 'box':
-            return 'border-2 border-success-50 shadow form-checkbox text-primary-50 h-6 w-6'
+            return 'border-2 border-success-50 shadow form-checkbox text-primary-50 h-6 w-6 focus:outline-none focus:ring-2 focus:ring-primary-50'
           case 'text':
-            return 'border-2 border-success-50 shadow w-full'
+            return 'border-2 border-success-50 shadow w-full focus:outline-none focus:ring-2 focus:ring-success-50 focus:border-success-50'
           case 'select':
-            return 'border-2 border-success-50 shadow w-full'
+            return 'border-2 border-success-50 shadow w-full focus:outline-none focus:ring-2 focus:ring-success-50 focus:border-success-50'
           case 'button':
-            return 'shadow-lg rounded-full border px-4 pt-2 pb-2'
+            return 'shadow-lg rounded-full border px-4 pt-2 pb-2 focus:outline-none focus:ring-2 focus:ring-success-50 '
           default:
             return ''
         }
