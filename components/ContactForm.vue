@@ -1,6 +1,9 @@
 <template>
-  <FormulateForm class="grid grid-cols-2 gap-4 max-w-2xl" @submit="submitForm">
-    <div class="w-full col-span-2">
+  <FormulateForm
+    class="grid md:grid-cols-2 gap-4 max-w-3xl"
+    @submit="submitForm"
+  >
+    <div class="w-full md:col-span-2">
       <div class="font-bold text-2xl">Sign up for email updates</div>
       <div>*Indicates Required Field</div>
     </div>
@@ -30,7 +33,7 @@
     />
     <FormulateInput
       v-model="formData.residentStatus"
-      class="col-span-2"
+      class="md:col-span-2"
       type="select"
       label="EU RESIDENT*"
       placeholder="SELECT ONE"

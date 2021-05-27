@@ -29,17 +29,15 @@ export default function ({ $axios }) {
       wrapper(context) {
         switch (context.classification) {
           case 'box':
-            return 'flex'
+            return 'flex space-x-4 items-end'
           default:
             return ''
         }
       },
       label(context) {
         switch (context.classification) {
-          case 'box':
-            return ''
           default:
-            return ''
+            return 'text-sm text-gray-900 font-medium'
         }
       },
       input(context) {
@@ -51,9 +49,9 @@ export default function ({ $axios }) {
           case 'box':
             return 'border-2 border-success-50 shadow'
           case 'text':
-            return 'border-2 border-success-50 shadow'
+            return 'border-2 border-success-50 shadow w-full'
           case 'select':
-            return 'border-2 border-success-50 shadow'
+            return 'border-2 border-success-50 shadow w-full'
           default:
             return ''
         }
