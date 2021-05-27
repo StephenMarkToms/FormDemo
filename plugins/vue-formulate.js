@@ -41,28 +41,28 @@ export default function ({ $axios }) {
         }
       },
       input(context) {
+        switch (context.attrs) {
+          case 'disabled':
+            return 'border-2 border-red-50 shadow'
+        }
         switch (context.classification) {
-          case 'button':
-            return ''
           case 'textarea':
             return ''
           case 'box':
-            return 'border-2 border-success-50 shadow'
+            return 'border-2 border-success-50 shadow form-checkbox text-primary-50 h-6 w-6'
           case 'text':
             return 'border-2 border-success-50 shadow w-full'
           case 'select':
             return 'border-2 border-success-50 shadow w-full'
+          case 'button':
+            return 'shadow-lg rounded-full border px-4 pt-2 pb-2'
           default:
             return ''
         }
       },
-      button: 'bg-red-500',
+      button: '',
       errors: '',
       error: 'mt-2 text-sm text-red-600',
-      grouping: 'mb-2',
-      groupRepeatable: 'relative',
-      groupRepeatableRemove:
-        'absolute border-danger-500 duration-150 ease-in-out flex font-black font-medium justify-center mr-1 mt-7 my-auto px-3 py-0.5 right-0 rounded-full text-danger-500 text-sm text-white top-0 transition',
     },
   })
 }

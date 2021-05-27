@@ -29,7 +29,7 @@
       v-model="formData.organization"
       type="text"
       label="ORGANIZATION"
-      required
+      disabled
     />
     <FormulateInput
       v-model="formData.residentStatus"
@@ -54,6 +54,18 @@
       type="checkbox"
       label="OTHER COMMUNICATIONS"
     />
+    <div class="md:col-span-2 space-x-4 flex">
+      <FormulateInput
+        input-class="bg-primary-50 shadow-lg rounded-full border border-primary-50 px-4 pt-2 pb-2 text-white w-40 text-center"
+        type="submit"
+        label="SUBMIT"
+      />
+      <FormulateInput
+        input-class="bg-white shadow-lg rounded-full border px-4 pt-2 pb-2 w-40 text-center"
+        type="button"
+        label="RESET"
+      />
+    </div>
   </FormulateForm>
 </template>
 <script>
