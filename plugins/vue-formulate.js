@@ -37,25 +37,23 @@ export default function ({ $axios }) {
       label(context) {
         switch (context.classification) {
           case 'box':
-            return 'ml-4 font-medium text-primary-700'
+            return ''
           default:
-            return 'text-sm font-bold leading-5 text-gray-700 sm:mt-px sm:pt-2'
+            return ''
         }
       },
       input(context) {
         switch (context.classification) {
-          case 'select':
-            return 'border-primary-300 text-primary-700 form-select relative block w-full mb-4 rounded-none rounded-md bg-transparent focus:z-10 transition ease-in-out duration-150 sm:text-sm sm:leading-5'
           case 'button':
-            return 'focus:outline-none border-transparent bg-primary-600 primary-btn hover:bg-primary-500 hover:border-primary-700 active:bg-primary-700 text-white shadow-md w-full my-auto flex justify-center py-2 px-2 border text-sm font-medium rounded-md transition duration-150 ease-in-out'
+            return ''
           case 'textarea':
-            return 'border-primary-300 rounded-lg text-primary-700 block w-full mb-4 transition duration-150 ease-in-out sm:text-sm sm:leading-5'
+            return ''
           case 'box':
-            return 'focus:ring-primary-500 h-4 w-4 text-primary-600 border-primary-300'
+            return 'border-2 border-success-50 shadow'
           case 'text':
-            return 'h-10 text-primary-700 appearance-none w-full px-3 py-2 mb-4 border border-primary-300 rounded-md placeholder-primary-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5'
-          case 'multiselect':
-            return 'h-10 text-primary-700 appearance-none w-full px-3 py-2 border border-primary-300 rounded-md placeholder-primary-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5'
+            return 'border-2 border-success-50 shadow'
+          case 'select':
+            return 'border-2 border-success-50 shadow'
           default:
             return ''
         }
